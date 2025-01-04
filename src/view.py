@@ -3,6 +3,8 @@ from tkinter import Entry, Button, BooleanVar, Checkbutton, Label, END, Frame
 from tkinter.messagebox import showerror
 from tkinter.ttk import Treeview
 
+from PyQt5.QtWidgets import QWidget
+
 
 class View:
     def __init__(self, root):
@@ -111,3 +113,11 @@ class View:
 
     def show_error(self, message: str):
         showerror(title="Erreur", message=message)
+
+
+class Window(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("Todo List")
+        self.showMaximized()
